@@ -1,12 +1,12 @@
 
 export const metadata = {
-  title: 'Not found',
+  title: 'Page 404',
 }
 
 export default () => {
   return (
     <>
-      <h1>Page not found</h1>
+      <h1> 404 Page not found</h1>
 
     </>
   )
