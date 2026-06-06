@@ -1,0 +1,28 @@
+.header {
+  padding-block: fluid(22, 14);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: var(--border-width-s) dashed transparent;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+  @keyframes scrolling-header {
+    to {
+      padding-block: 10px;
+      background-color: var(--color-black-08);
+      border-color: var(--border-width-s) solid var(--color-gray-60);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 16px;
+  }
+
+}
