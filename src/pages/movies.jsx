@@ -1,15 +1,16 @@
 
 
 export const metadata = {
-  title: 'Home',
+  title: 'Movies',
 }
 
 export default () => {
   return (
     <>
       <div className="container">
-        <h1>Home page</h1>
+        <h1>Movies</h1>
       </div>
+
     </>
   )
 }
