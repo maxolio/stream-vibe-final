@@ -1,5 +1,6 @@
 import './Button.scss'
 import clsx from 'clsx'
+import Icon from '@/components/Icon'
 
 export default (props) => {
 
@@ -10,7 +11,11 @@ export default (props) => {
     className,
     label,
     isLabelHidden = false,
-    disabled
+    disabled,
+    iconName,
+    iconPosition = 'before',
+    mode = '', /*transparent*/
+
   } = props
 
   const isLink = href !== undefined
@@ -19,17 +24,24 @@ export default (props) => {
   const buttonProps = {type, disabled}
   const specificProps = isLink ? linkProps : buttonProps
   const title = isLabelHidden ? label : undefined
-
+  const iconComponent = iconName && (
+    <Icon className="button__icon"
+          name={iconName} />
+  )
 
   return (
-    <Component className={clsx(className, 'button')}
+    <Component className={clsx(className, 'button', {
+      [`button--${mode}`]: mode,
+    })}
                title={title}
                aria-label={title}
                {...specificProps}
     >
+      {iconPosition === 'before' && iconComponent}
       {!isLabelHidden && (
         <span className="button__label">{label}</span>
       )}
+      {iconPosition === 'after' && iconComponent}
     </Component>
   )
 }
