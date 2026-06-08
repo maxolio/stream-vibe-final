@@ -1,6 +1,7 @@
 import './Header.scss'
 import Logo from '@/components/Logo'
 import clsx from 'clsx'
+import Button from '@/components/Button'
 
 export default (props) => {
 
@@ -34,7 +35,7 @@ export default (props) => {
             {menuItems.map((menuItem, index) => (
               <li className="header__menu-item"
                   key={index}>
-                <a className={clsx("header__menu-link", {
+                <a className={clsx('header__menu-link', {
                   'is-active': menuItem.href === url,
                 })}
                    href={menuItem.href}>
@@ -44,6 +45,15 @@ export default (props) => {
             ))}
           </ul>
         </nav>
+        <div className="header__actions">
+          <Button className="header__button"
+                  disabled
+                  label="Search" />
+          <Button className="header__link"
+                  label="Notification"
+
+                  href="#" />
+        </div>
       </div>
     </header>
   )
