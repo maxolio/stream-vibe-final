@@ -3,16 +3,20 @@ import clsx from 'clsx'
 
 export default (props) => {
 
-  const {className} = props
+  const {
+    className,
+    extraAttrs,
+  } = props
 
   const title = 'Open menu'
 
   return (
     <button
-      className={clsx(className, "burger-button")}
+      className={clsx(className, 'burger-button')}
       type="button"
       aria-label={title}
       title={title}
+      {...extraAttrs}
     >
       <svg className="burger-button__svg"
            width="30"
