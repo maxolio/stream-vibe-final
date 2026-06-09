@@ -31,37 +31,39 @@ export default (props) => {
     <header className="header">
       <div className="header__inner container">
         <Logo className="header__logo" />
-        <nav className="header__menu">
-          <ul className="header__menu-list">
-            {menuItems.map((menuItem, index) => (
-              <li className="header__menu-item"
-                  key={index}>
-                <a className={clsx('header__menu-link', {
-                  'is-active': menuItem.href === url,
-                })}
-                   href={menuItem.href}>
-                  {menuItem.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="header__actions">
-          <Button className="header__button"
-                  label="Search"
-                  isLabelHidden
-                  iconName="search"
-                  mode="transparent"
-          />
-          <Button className="header__button"
-                  label="Notification"
-                  isLabelHidden
-                  iconName="notification"
-                  mode="transparent"
+        <dialog className="header__overlay-menu-dialog">
+          <nav className="header__menu">
+            <ul className="header__menu-list">
+              {menuItems.map((menuItem, index) => (
+                <li className="header__menu-item"
+                    key={index}>
+                  <a className={clsx('header__menu-link', {
+                    'is-active': menuItem.href === url,
+                  })}
+                     href={menuItem.href}>
+                    {menuItem.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="header__actions">
+            <Button className="header__button"
+                    label="Search"
+                    isLabelHidden
+                    iconName="search"
+                    mode="transparent"
+            />
+            <Button className="header__button"
+                    label="Notification"
+                    isLabelHidden
+                    iconName="notification"
+                    mode="transparent"
 
-                   />
-        </div>
-        <BurgerButton className="header__burger-button"/>
+            />
+          </div>
+        </dialog>
+        <BurgerButton className="header__burger-button visible-tablet"/>
       </div>
     </header>
   )
