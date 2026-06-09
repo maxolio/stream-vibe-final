@@ -2,6 +2,7 @@ import './Header.scss'
 import Logo from '@/components/Logo'
 import clsx from 'clsx'
 import Button from '@/components/Button'
+import BurgerButton from '@/components/BurgerButton'
 
 export default (props) => {
 
@@ -60,6 +61,7 @@ export default (props) => {
 
                    />
         </div>
+        <BurgerButton className="header__burger-button"/>
       </div>
     </header>
   )
