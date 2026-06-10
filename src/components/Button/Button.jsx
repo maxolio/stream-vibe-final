@@ -14,7 +14,8 @@ export default (props) => {
     disabled,
     iconName,
     iconPosition = 'before',
-    mode = '', /*transparent*/
+    mode = '', /*transparent / black-10*/
+    hasFillIcon,
 
   } = props
 
@@ -26,6 +27,7 @@ export default (props) => {
   const title = isLabelHidden ? label : undefined
   const iconComponent = iconName && (
     <Icon className="button__icon"
+          hasFill={hasFillIcon}
           name={iconName} />
   )
 
